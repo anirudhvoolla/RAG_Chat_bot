@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>RAG Chatbot</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 3.5 14.15 9.85 20.5 12l-6.35 2.15L12 20.5l-2.15-6.35L3.5 12l6.35-2.15L12 3.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+            <path d="m19 3 .7 2.3L22 6l-2.3.7L19 9l-.7-2.3L16 6l2.3-.7L19 3Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <div>
+          <p class="brand-name">Knowledge Chat</p>
+          <p class="brand-caption">Your documents, in conversation</p>
+        </div>
+      </div>
+      <span class="product-badge">DOCUMENT ASSISTANT</span>
+    </header>
+
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">A little more clarity</p>
+      <h1 id="page-title">Ask your documents.</h1>
+      <p class="intro-copy">Find the details you need, with answers grounded in your knowledge base.</p>
+    </section>
+
+    <section class="chat-card" aria-label="Chat with your documents">
+      <div class="chat-toolbar">
+        <span class="ready-status"><span class="status-dot" aria-hidden="true"></span>Ready when you are</span>
+        <span>Answers include document sources</span>
+      </div>
+      <div id="log" role="log" aria-live="polite" aria-relevant="additions text">
+        <div class="welcome" id="welcome">
+          <div class="welcome-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M5 5.75A2.75 2.75 0 0 1 7.75 3h8.5A2.75 2.75 0 0 1 19 5.75v8.5A2.75 2.75 0 0 1 16.25 17H11l-4.5 4v-4.3A2.75 2.75 0 0 1 5 14.25v-8.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M9 8h6M9 11.5h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h2>What would you like to know?</h2>
+          <p>Ask a question and I’ll look through your documents for a useful answer.</p>
+          <div class="suggestions" aria-label="Suggested questions">
+            <button class="suggestion" type="button" data-prompt="What are the main ideas in these documents?">Summarize the key ideas</button>
+            <button class="suggestion" type="button" data-prompt="What does the documentation say about getting started?">How do I get started?</button>
+            <button class="suggestion" type="button" data-prompt="What important details should I know?">Find important details</button>
+          </div>
+        </div>
+      </div>
+      <div class="composer-area">
+        <form id="chat-form">
+          <label class="visually-hidden" for="question">Ask a question about your documents</label>
+          <input id="question" placeholder="Ask anything about your documents..." autocomplete="off" autofocus>
+          <button id="send-button" type="submit" aria-label="Send message">
+            <span id="send-label">Send</span>
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M3.5 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </form>
+        <div class="composer-note">
+          <span>AI can make mistakes. Check the source documents for details.</span>
+          <span>Press Enter to send</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="/static/script.js"></script>
+</body>
+</html>
